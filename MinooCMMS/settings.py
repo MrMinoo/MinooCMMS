@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5',
     'suppliers',
     'departments',
     'equipments',
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'MinooCMMS.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR /'templates'],  # اضافه کردن مسیر templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

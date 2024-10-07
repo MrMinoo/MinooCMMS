@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}جزئیات دپارتمان{% endblock %}
+
+{% block content %}
+<div class="card text-end">
+    <div class="card-header bg-primary text-white">
+        <h2>{{ department.name }}</h2>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">اطلاعات دپارتمان</h4>
+        <p class="card-text">
+            <strong>نام دپارتمان: </strong> {{ department.name }}<br>
+        </p>
+
+        <!-- لیست مهندسین مرتبط با این دپارتمان -->
+        <h4 class="mt-4">مهندسین این دپارتمان</h4>
+        {% if engineers %}
+            <ul class="list-group">
+                {% for engineer in engineers %}
+                    <li class="list-group-item">
+                        <a href="{% url 'engineer_detail' engineer.phone %}" class="text-decoration-none text-dark">
+                            {{ engineer.full_name }} - {{ engineer.phone }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-muted">هیچ مهندسی در این دپارتمان ثبت نشده است.</p>
+        {% endif %}
+    </div>
+    <div class="card-footer">
+        <a href="{% url 'department_list' %}" class="btn btn-secondary">بازگشت به لیست دپارتمان‌ها</a>
+    </div>
+</div>
+{% endblock %}
