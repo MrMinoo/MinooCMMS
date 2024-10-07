@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ equipment.name }} Details</title>
+</head>
+<body>
+    <h1>{{ equipment.name }}</h1>
+    <p>Model: {{ equipment.model }}</p>
+    <p>Serial Number: {{ equipment.serial_number }}</p>
+    <p>Location: {{ equipment.location }}</p>
+    <p>Status: {{ equipment.status }}</p>
+    <p>Department: {{ equipment.department.name }}</p>
+    <p>Supplier: {{ equipment.supplier.name }}</p>
+    <p>Installation Date: {{ equipment.installation_date }}</p>
+    <p>Guarantee: {{ equipment.guarantee }}</p>
+    <h2>Notes</h2>
+    <p>{{ equipment.notes }}</p>
+</body>
+</html>
