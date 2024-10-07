@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('equipments/', include('equipments.urls')),
     path('', include('home.urls')),  # اضافه کردن اپلیکیشن home
-
+    path('maintenance/', include('maintenance.urls')),  # اضافه کردن مسیر اپلیکیشن maintenance
+    path('departments/', include('departments.urls')),  # اضافه کردن مسیر اپلیکیشن departments
+    path('engineers/', include('engineers.urls')),  # اضافه کردن مسیر اپلیکیشن engineers
 ]

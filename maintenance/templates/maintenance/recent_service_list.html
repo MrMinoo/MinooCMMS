@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Services</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>لیست سرویس‌های اخیر</h1>
+        <ul>
+            {% for service in recent_services %}
+                <li>{{ service.equipment.name }} - {{ service.service_date }} - {{ service.description }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'home' %}" class="btn btn-primary">بازگشت به صفحه اصلی</a>
+    </div>
+</body>
+</html>
