@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('equipments/', include('equipments.urls')),
+    path('', include('home.urls')),  # اضافه کردن اپلیکیشن home
 
 ]

@@ -1,0 +1,66 @@
+<!-- home/templates/home/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- ردیف اول -->
+            <div class="col-md-6">
+                <h3>دستگاه‌هایی که موعد سرویس دوره‌ای آن‌ها رسیده است</h3>
+                <ul>
+                    {% for device in due_services %}
+                        <li>{{ device.name }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'equipment_list' %}">مشاهده لیست کامل</a>
+            </div>
+            <div class="col-md-6">
+                <h3>دستگاه‌هایی که در حال تعمیر هستند</h3>
+                <ul>
+                    {% for device in ongoing_repairs %}
+                        <li>{{ device.name }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'repair_list' %}">مشاهده لیست کامل</a>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- ردیف دوم -->
+            <div class="col-md-4">
+                <h3>دپارتمان‌ها</h3>
+                <ul>
+                    {% for department in departments %}
+                        <li>{{ department.name }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'department_list' %}">مشاهده لیست کامل</a>
+            </div>
+            <div class="col-md-4">
+                <h3>مهندسین</h3>
+                <ul>
+                    {% for engineer in engineers %}
+                        <li>{{ engineer.name }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'engineer_list' %}">مشاهده لیست کامل</a>
+            </div>
+            <div class="col-md-4">
+                <h3>دستگاه‌هایی که اخیراً سرویس یا تعمیر شده‌اند</h3>
+                <ul>
+                    {% for device in recently_serviced %}
+                        <li>{{ device.name }}</li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'recent_service_list' %}">مشاهده لیست کامل</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
